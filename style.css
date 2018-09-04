@@ -1,3 +1,7 @@
-div {
+.color {
     background-color: red;
+}
+
+.change {
+    background-color: yellow;
 }
