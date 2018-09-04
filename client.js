@@ -6,6 +6,7 @@ function onReady(){
     console.log('JQ');
     $('#generateButton').on('click', appendDiv);
     $(document).on('click', '#swapButton', toggleColor);
+    $(document).on('click', '#deleteButton', deleteDiv);
 }
 
 totalClicks = 0;
@@ -22,5 +23,11 @@ function appendDiv(){
 
 function toggleColor(){
     console.log('in toggle color');
-    $('.color').toggleClass('change');
+    $('div.color').toggleClass('change');
+}
+
+function deleteDiv(){
+    console.log('in delete button');
+    $(this).closest('div').remove();
+    
 }
