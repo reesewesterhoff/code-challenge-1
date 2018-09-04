@@ -1,15 +1,13 @@
-console.log('js');
 
 $(document).ready(onReady);
 
 function onReady(){
-    console.log('JQ');
     $('#generateButton').on('click', appendDiv);
     $(document).on('click', '#swapButton', toggleColor);
     $(document).on('click', '#deleteButton', deleteDiv);
 }
 
-totalClicks = 0;
+totalClicks = 1;
 
 function appendDiv(){
     console.log('in appendDiv');
@@ -22,12 +20,11 @@ function appendDiv(){
 }
 
 function toggleColor(){
-    console.log('in toggle color');
-    $('div.color').toggleClass('change');
+    $('.color').closest('div').toggleClass('change');
+    // having trouble targeting just one div to change color
 }
 
 function deleteDiv(){
-    console.log('in delete button');
     $(this).closest('div').remove();
     
 }
