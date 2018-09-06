@@ -7,21 +7,21 @@ function onReady(){
     $(document).on('click', '#deleteButton', deleteDiv);
 }
 
-totalClicks = 1;
+totalClicks = 0;
 
 function appendDiv(){
+    totalClicks++;
     console.log('in appendDiv');
     $('body').append(`<div class="color">
     <p>` + totalClicks + `</p>
     <button id="swapButton">Swap</button>
     <button id="deleteButton">Delete</button>
     </div>`);
-    totalClicks++;
+    
 }
 
 function toggleColor(){
-    $('.color').closest('div').toggleClass('change');
-    // having trouble targeting just one div to change color
+    $(this).parent('div').toggleClass('change');
 }
 
 function deleteDiv(){
